@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+</head>
+<body>
+    <script>
+        document.write("<h2>Creating Date</h2>");
+        let now= new Date();
+        document.write("Current Date and Time: " + now + "<br>");
+
+        let specificDate = new Date(2025, 7, 13); // Note: Month is 0-indexed (0 = January)
+        document.write("Specific Date  " + specificDate + "<br>");
+
+        let dateString = new Date("2025-08-13T10:30:00");
+        document.write("Date from String: " + dateString + "<br>");
+
+        let timestamp = new Date(17235400000); // Example timestamp
+        document.write("Date from Timestamp: " + timestamp + "<br>");
+
+        document.write("<h2>Date Methods</h2>");
+        document.write("Year: " + now.getFullYear() + "<br>");
+        document.write("Month: " + (now.getMonth() + 1) + "<br>"); // Months are 0-indexed
+        document.write("Date: " + now.getDate() + "<br>");
+        document.write("Hours: " + now.getHours() + "<br>");
+        document.write("Minutes: " + now.getMinutes() + "<br>");
+        document.write("Seconds: " + now.getSeconds() + "<br>");
+         document.write("Milliseconds: " + now.getMilliseconds() + "<br>");
+        document.write("Day of Week: " + now.getDay() + "<br>"); // 0 = Sunday, 1 = Monday, etc.
+        document.write("Time in milliseconds  " + now.getTime() + "<br>");
+        document.write("Timestamp(ms)" + now.getTime() + "<br>"); 
+
+        document.write("<h2>Date modification</h2>");
+        let d=new Date();
+        d.setFullYear(2025);
+        d.setMonth(6); // July (0-indexed)
+        d.setDate(15);
+        d.setHours(10);
+        d.setMinutes(30);
+        d.setSeconds(45);
+        document.write("Modified Date: " + d + "<br>");
+
+    </script>
+</body>
+</html>
