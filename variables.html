@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>document.write(x,"<br>"); 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Variable demo</title>
+</head>
+<body>
+    <script>
+       var x=100;
+       document.write(x,"<br>");
+       var x=200;
+       document.write(x,"<br>"); 
+       document.write(x+x,"<br>"); 
+       let y=50;
+       document.write(y,"<br>"); //let does not allow redeclaration
+
+
+       let z=30;//global declaration
+       document.write(z,"<br>");
+       {
+         let z=40;
+         document.write(z,"<br>"); // local declaration
+       }
+       document.write(z,"<br>");
+
+       const i=25;
+        document.write(i,"<br>");
+       {
+        const i=45;
+        document.write(i,"<br>");
+       }
+
+       let a=10;
+       let b=0.2;
+       let c=true;
+       d="Hello";
+       e=null;
+       document.write(typeof(a)," ",typeof(b)," ",typeof(c)," ",typeof(d)," ",typeof(e),"<br>");
+       
+       function kl_fun(){
+        document.writeln("This is a function from kl_fun() <br>");
+       }
+       kl_fun();
+
+       function another_type(){
+        return "This is another way.<br>"
+       }
+       document.write(another_type());
+       document.write(typeof 12.657,"<br>");
+       document.write(typeof "hello","<br>");
+       document.write(typeof [],"<br>");
+        document.write(typeof kl_fun(),"<br>");
+         document.write(typeof 100n,"<br>")
+
+         var m=50;
+         document.write(m,"<br>");
+         m+=10;
+         document.write(m,"<br>");
+         n=5;
+         n++;
+         document.write(n,"<br>");
+
+
+    </script>
+    
+</body>
+</html>
