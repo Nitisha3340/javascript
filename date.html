@@ -41,7 +41,22 @@
         d.setMinutes(30);
         d.setSeconds(45);
         document.write("Modified Date: " + d + "<br>");
+        document.write("<h2> Formatting Date </h2>");
+        document.write("toDateString(): " + now.toDateString() + "<br>");
+        document.write("toTimeString(): " + now.toTimeString() + "<br>");
+        document.write("toLocaleDateString(): " + now.toLocaleDateString() + "<br>");
+        document.write("toLocaleTimeString(): " + now.toLocaleTimeString() + "<br>");
+        document.write("toISOString(): " + now.toISOString() + "<br>");
 
-    </script>
+        document.write("<h2> Time Difference Example</h2>")
+        let  start= new Date("2025-08-13T10:00:00") ;
+        let end= new Date("2025-08-13T12:00:00");
+        let timeDiff = end - start; // Difference in milliseconds   
+        let diffHours = Math.floor(timeDiff / (1000 * 60 * 60));
+        let diffMinutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        document.write("Time Difference: " + diffHours + " hours and " + diffMinutes + " minutes<br>");
+
+
+           </script>
 </body>
 </html>
