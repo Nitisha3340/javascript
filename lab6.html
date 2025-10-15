@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    input, button { padding: 10px; font-size: 1em; margin: 10px; }
+    #weather { margin-top: 20px; font-size: 1.2em; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+
+  <h2>🌤️ Weather App</h2>
+  <input type="text" id="cityInput" placeholder="Enter city name">
+  <button onclick="getWeather()">Get Weather</button>
+
+  <div id="weather"></div>
+
+  <script>
+    const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
+    const weatherDiv = document.getElementById('weather');
+    const cityInput = document.getElementById('cityInput');
+
+    async function fetchWeather(city) {
+      try {
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+        if (!res.ok) throw new Error('City not found');
+        const data = await res.json();
+        const { name, main, weather } = data;
+        weatherDiv.innerHTML = `
+          <strong>${name}</strong><br>
+          🌡️ Temp: ${main.temp}°C<br>
+          ☁️ Condition: ${weather[0].description}
+        `;
+        weatherDiv.className = '';
+        localStorage.setItem('lastCity', city);
+      } catch (err) {
+        weatherDiv.innerHTML = `❌ ${err.message}`;
+        weatherDiv.className = 'error';
+      }
+    }
+
+    function getWeather() {
+      const city = cityInput.value.trim();
+      if (city) fetchWeather(city);
+      else {
+        weatherDiv.innerHTML = '❗ Please enter a city name';
+        weatherDiv.className = 'error';
+      }
+    }
+
+    // Load last searched city on page load
+    window.onload = () => {
+      const lastCity = localStorage.getItem('lastCity');
+      if (lastCity) {
+        cityInput.value = lastCity;
+        fetchWeather(lastCity);
+      }
+    };
+  </script>
+
+</body>
+</html>

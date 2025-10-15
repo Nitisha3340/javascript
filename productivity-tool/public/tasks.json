@@ -1,0 +1,4 @@
+[
+  { "id": 1, "text": "Finish React project", "completed": false },
+  { "id": 2, "text": "Review Tailwind docs", "completed": true }
+]

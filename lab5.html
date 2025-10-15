@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Registration Form</title>
+  <style>
+    body { font-family: sans-serif; margin: 40px; }
+    form { max-width: 400px; margin: auto; }
+    input { width: 100%; padding: 10px; margin-bottom: 5px; border: 2px solid #ccc; border-radius: 4px; }
+    input.valid { border-color: green; background: #e6ffe6; }
+    input.invalid { border-color: red; background: #ffe6e6; }
+    .error { color: red; font-size: 0.9em; margin-bottom: 10px; }
+    .success { color: green; text-align: center; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <form id="form" novalidate>
+    <input type="text" id="name" placeholder="Full Name" required>
+    <div class="error" id="nameErr"></div>
+
+    <input type="email" id="email" placeholder="Email" required>
+    <div class="error" id="emailErr"></div>
+
+    <input type="password" id="pass" placeholder="Password" required>
+    <div class="error" id="passErr"></div>
+
+    <input type="tel" id="phone" placeholder="Phone Number" pattern="[0-9]{10}" required>
+    <div class="error" id="phoneErr"></div>
+
+    <button type="submit">Register</button>
+    <div class="success" id="success"></div>
+  </form>
+
+  <script>
+    const form = document.getElementById('form');
+    const fields = {
+      name: { regex: /.+/, error: 'Name is required.' },
+      email: { regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, error: 'Invalid email.' },
+      pass: { regex: /^(?=.*[!@#$%^&*])(?=.{6,})/, error: 'Weak password.' },
+      phone: { regex: /^[0-9]{10}$/, error: 'Enter 10-digit phone.' }
+    };
+
+    Object.keys(fields).forEach(id => {
+      const input = document.getElementById(id);
+      const err = document.getElementById(id + 'Err');
+      input.addEventListener('input', () => {
+        const valid = fields[id].regex.test(input.value.trim());
+        input.className = valid ? 'valid' : 'invalid';
+        err.textContent = valid ? '' : fields[id].error;
+      });
+    });
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      let allValid = true;
+      Object.keys(fields).forEach(id => {
+        const input = document.getElementById(id);
+        const err = document.getElementById(id + 'Err');
+        const valid = fields[id].regex.test(input.value.trim());
+        input.className = valid ? 'valid' : 'invalid';
+        err.textContent = valid ? '' : fields[id].error;
+        if (!valid) allValid = false;
+      });
+      document.getElementById('success').textContent = allValid ? '✅ Registration successful!' : '';
+      if (allValid) form.reset();
+    });
+  </script>
+
+</body>
+</html>

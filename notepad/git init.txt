@@ -1,0 +1,25 @@
+git init
+
+git config --global user.name "Nitisha3340"
+
+>git config --global user.email "2400033340@kluniversity.in"
+
+git add .
+
+git remote add origin https://github.com/Nitisha3340/fedf.git
+
+git branch -M main
+
+git push -u origin main
+
+
+
+
+if already origin exits:
+git remote remove origin
+
+
+
+second.html
+(same folder new file)
+

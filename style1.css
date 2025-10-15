@@ -1,0 +1,124 @@
+/* Reset default margins */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #fccc9f;
+  color: #110909;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Navigation Bar - Fixed */
+nav {
+  background: #e17055;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 1rem;
+  display: block;
+}
+
+nav ul li a:hover {
+  background: #d35400;
+}
+
+/* Add padding so content doesn't hide behind nav */
+section {
+  padding: 5rem 1rem 2rem;
+}
+
+/* Slideshow */
+.slideshow {
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  animation: slide 12s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Slideshow Animation */
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  30%  { transform: translateX(0%); }
+  35%  { transform: translateX(-100%); }
+  65%  { transform: translateX(-100%); }
+  70%  { transform: translateX(-200%); }
+  100% { transform: translateX(-200%); }
+}
+
+/* Footer */
+footer {
+  background: #e17055;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  .slideshow {
+    height: 250px;
+  }
+
+  .slides img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  section {
+    padding: 4rem 1rem 1rem;
+  }
+}

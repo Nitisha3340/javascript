@@ -1,0 +1,18 @@
+javascript
+
+
+high level , interpreted scripting language
+object based language
+
+built in objects:
+window , console, document, localStorage , sessionStorage, cookies
+
+hoe to execute:
+
+using browser:<script>
+
+install node js and can be execute from console
+
+
+##Imp##
+document.write(10+ +"10","<br>");//type cohersion
