@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Array and Methods </title>
+</head>
+<body>
+    <h1>JavaScript Arrays & Methods</h1>
+    <script>
+        document.write("<h2>Creating an array" + "</h2>");
+        let fruits = ["Apple", "Banana", "Cherry", "Date"];
+        document.write(typeof fruits + "<br>");
+        document.write("Fruits Array: " + fruits + "<br>");
+
+        let values=[10 , 20, 30 ,40, 50];
+        console.table(values);
+
+        let mixed=["fedf", "205", "c521A",{name:"Nitisha"}];
+        document.write("Mixed Values: " + mixed + "<br>");
+
+        document.write("<h2>push() - Add element at end</h2>");
+        fruits.push("Orange");
+        document.write("After push: " + fruits + "<br>");
+
+        let removedFruit = fruits.pop();
+        document.write("<h2>pop() - Remove last element</h2>");
+        document.write("Removed Fruit: " + removedFruit + "<br>");
+        document.write("After pop: " + fruits + "<br>");
+
+        let mylist=fruits.toString;
+        document.write("<h2>toString() - Convert array to string</h2>");    
+        document.write("Array as String: " + mylist + "<br>");
+
+        document.write("<h2>Shift() - Remove element at start</h2>");
+        fruits.shift();
+        document.write("After shift: " + fruits + "<br>");
+
+        document.write("<h2>Unshift() - Add element at start</h2>");
+        fruits.unshift("Mango");    
+        document.write("After unshift: " + fruits + "<br>");
+
+        document.write("<h2>Concat() - Combine arrays</h2>");
+        let moreFruits = ["Grapes", "Pineapple"];   
+        let allFruits = fruits.concat(moreFruits);
+        document.write("Combined Array: " + allFruits + "<br>");
+
+        document.write("<h2>Slice() - Extract part of array</h2>");
+        let slicedFruits = allFruits.slice(1, 4);
+        document.write("Sliced Array: " + slicedFruits + "<br>");
+
+        document.write("<h2>Splice() - Add or remove elements</h2>");
+        allFruits.splice(2, 1, "Kiwi");
+        document.write("After Splice: " + allFruits + "<br>");
+        allFruits.splice(-2, 1);
+        document.write("After removing element at index 4: " + allFruits + "<br>");
+
+        document.write("<h2>IndexOf() & lastIndexOf()</h2>");
+        let numbers=[1,2,3,2,4];
+        document.write("Index of 2: " + numbers.indexOf(2) + "<br>");
+        document.write("Last Index of 2: " + numbers.lastIndexOf(2) + "<br>");
+
+        document.write("<h2>Includes()</h2>");
+        document.write("Does array include 'Banana'? " + fruits.includes("Banana") + "<br>");
+
+        document.write("<h2>ForEach()</h2>");
+        numbers.forEach(function(num) {    //forEach loop-a function calling itself , a callback function
+            document.write(num * 2  + " " + "<br>"); 
+        });
+        document.write("<br> <br>");
+
+         document.write("<h2>map()</h2>");
+        let doubled = numbers.map(num => num * 2);
+        document.write(doubled + "<br><br>");
+
+        document.write("<h2>filter()</h2>");
+        let even = numbers.filter(num => num % 2 === 0);
+        document.write(even + "<br><br>");
+
+        document.write("<h2>reduce()</h2>");
+        let sum = numbers.reduce((total, num) => total + num, 0);
+        document.write(sum + "<br><br>");
+
+        document.write("<h2>sort()</h2>");
+        let sortedFruits = allFruits.slice().sort();
+        document.write(sortedFruits + "<br><br>");
+
+        document.write("<h2>reverse()</h2>");
+        let reversedNumbers = numbers.slice().reverse();
+        document.write(reversedNumbers + "<br><br>");
+        
+    </script>
+</body>
+</html>

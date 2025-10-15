@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forloop</title>
+</head>
+<body>
+    <script>
+        let numbers=[10, 20, 30, 40, 50];
+        document.write(typeof numbers + "<br>");
+
+        //Standard for loop
+        document.write("<h2>Standard For Loop</h2>");       
+        for (let i = 0; i < numbers.length; i++) {
+            document.write("Element at index " + i + ": " + numbers[i] + "<br>");
+        }
+        document.write("<br>");
+
+        //for...in loop ..in means based on indexes
+        document.write("<h2>For...in Loop</h2>");
+        for (let index in numbers) {
+            document.write("Element at index " + index + ": " + numbers[index] + "<br>");
+        }       
+        document.write("<br>");
+        //for...of loop
+        document.write("<h2>For...of Loop</h2>");   
+        for (let value of numbers) {
+            document.write("Value: " + value + "<br>");
+        }
+        document.write("<br>");
+
+        //forEach loop
+        document.write("<h2>ForEach Loop</h2>");    
+        numbers.forEach(function(value, index){
+            document.write("Element at index " + index + ": " + value + "<br>");
+        });
+        document.write("<br>");
+
+        //Example with objects
+        let student = {
+            name: "John",
+            age: 20,
+            course: "Computer Science"
+        };
+        document.write("<h2>For...in Loop with Object</h2>");
+        for (let key in student) {
+            document.write(key + ": " + student[key] + "<br>");
+        }
+        document.write("<br>");
+
+        //for ...of works on iretable objects like arrays, strings, maps, sets, etc.
+        document.write("<h2>For...of Loop with String</h2>");
+        let str = "Hello";
+        for (let char of str) {
+            document.write("Character: " + char + "<br>");
+        }
+        document.write("<br>");
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Function Types Demo</title>
+</head>
+<body>
+    <h2>JavaScript Function Types Demo</h2>
+    <button onclick="runDeclaration()">Function Declarations</button>
+    <button onclick="runExpression()">Function Expressions</button>
+    <button onclick="runArrowFunction()">Arrow Functions</button>
+    <button onclick="runAnonymousFunction()">Anonymous Functions</button>
+    <button onclick="runIIFE()">IIFE</button>
+    <button onclick="runConstructorFunction()">Constructor Functions</button>   
+    <button onclick="runGenerator()">Generator Functions</button>
+    <button onclick="runAsyncFunction()">Async Functions</button>
+    <div id="output">Output will be generated here...</div>
+    <script>
+        const outputDiv = document.getElementById("output");
+        function show(msg){
+            outputDiv.innerText += msg + "\n";
+        } 
+        function clearOutput() {
+            outputDiv.innerText = "";
+        } 
+        function calculateTotal(price, tax) {
+            return price + (price * tax);
+        } 
+        function runDeclaration() {
+            clearOutput();
+                show("Total= "+ calculateTotal(10, 20));
+        }
+        const greet = function(name) {
+            return `Hello,${name}!`;
+        };
+        function runExpression() {
+            clearOutput();
+            show(greet("Nitisha"));
+        }
+        const tasks = ["Study", "Sleep", "Get bored","Eat"];
+        const shortTasks= tasks.filter(task => task.length <= 10);
+        function runArrowFunction() {
+            clearOutput();
+            show("Short Tasks: " + shortTasks.join(", "));
+        }
+        function runAnonymousFunction() {
+            clearOutput();
+            setTimeout(function() {
+                show("Remainder: take a kitkat and a break!");
+            }, 1000);
+        }
+           
+        
+    </script>
+
+</body>
+</html>
