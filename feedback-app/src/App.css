@@ -1,0 +1,144 @@
+.app-container {
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  padding: 40px 20px;
+}
+
+.app-title {
+  text-align: center;
+  color: #2563eb;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.feedback-card {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 1rem;
+}
+
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #1a1a1a;
+  background-color: white;
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-textarea::placeholder {
+  color: #9ca3af;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 14px 24px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #1d4ed8;
+}
+
+.submit-button:active {
+  background-color: #1e40af;
+}
+
+.feedback-list-section {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.list-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.no-feedback {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.feedback-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feedback-item {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  text-align: left;
+}
+
+.rating-display {
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.comment-display {
+  color: #4b5563;
+  line-height: 1.6;
+}
+

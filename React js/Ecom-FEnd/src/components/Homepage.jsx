@@ -1,26 +1,43 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+
 const Homepage = () => {
   return (
-    <div className="min-h-screen bg-blue-50">
-      <nav className="flex justify-between items-center p-6 bg-white shadow-lg">
-        <div className="flex items-center space-x-4">
-           <img src="/logo.jpg" alt="Logo" className="h-12 w-12 rounded-full" />
-           <h1 className="text-2xl font-bold text-gray-800">Product Management System</h1>
+    <div className="min-h-screen bg-blue-50 flex flex-col">
+      {/* Header */}
+      <header className="bg-pink-300">
+        <div className="container mx-auto px-6 py-3 relative">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <img src="/logo.jpg" alt="logo" className="h-10 w-10 object-cover rounded" />
+            </div>
+
+            {/* centered title using absolute overlay for true center */}
+            <h1 className="absolute left-0 right-0 text-center text-lg font-bold text-gray-900">
+              Product Management System
+            </h1>
+
+            <nav className="flex items-center gap-6">
+              <Link to="/signin" className="text-sm text-gray-800 hover:underline">SignIn</Link>
+              <Link to="/signup" className="text-sm text-gray-800 hover:underline">SignUp</Link>
+              <Link to="/aboutus" className="text-sm text-gray-800 hover:underline">AboutUs</Link>
+            </nav>
+          </div>
         </div>
-        <div className="flex space-x-6">
-            <Link to="/signin" className="px-4 py-2 text-blue-600 hover:text-blue-800 font-medium transition-colors">Sign In</Link>
-            <Link to="/signup" className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Sign Up</Link>
-            <Link to="/aboutus" className="px-4 py-2 text-gray-600 hover:text-gray-800 font-medium transition-colors">About us</Link>
-        </div>
-      </nav>
-      <div className="container mx-auto px-6 py-12">
-        <div className="bg-white rounded-lg shadow-md p-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Welcome to Our Platform</h2>
-          <p className="text-gray-600 leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores dicta, ab expedita dolores eum adipisci libero ratione quisquam, tempora itaque exercitationem pariatur officia non rem, deserunt ex cupiditate a possimus ad perspiciatis architecto. Fuga, ratione voluptate magnam voluptatum, recusandae, eum accusamus laborum ex facere dolores in culpa molestiae? Sed temporibus quis quibusdam dicta, ut, illum sunt obcaecati inventore doloremque assumenda eius placeat ex tempora. Dicta, amet. Aperiam velit consectetur magni ratione. Nulla blanditiis quia corrupti corporis? Quia dolor obcaecati quaerat aliquid illo aperiam quisquam ipsum nihil excepturi vero, accusamus ducimus error voluptatibus vitae iusto porro fuga commodi sint voluptas dicta?
+      </header>
+
+      {/* Content area */}
+      <main className="flex-grow container mx-auto px-8 py-8">
+        <div className="bg-blue-100 rounded-md p-6 text-gray-800">
+          <p className="leading-relaxed">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus eligendi veniam dolores quam doloremque odit debitis perspiciatis, sint excepturi incidunt corporis corrupti, illo ex quas dolorum architecto totam saepe fuga vero ipsa maiores beatae accusantium. Officia voluptates incidunt rerum eveniet molestiae. Officia inventore accusamus consequuntur explicabo sequi sunt porro, in laboriosam molestias neque delectus, nostrum exercitationem incidunt qui impedit nobis, repellat obcaecati ipsum. Distinctio harum vero blanditiis quis repudiandae ipsam incidunt corrupti ad vitae illo? Corporis obcaecati ex blanditiis sequi minima soluta, fugiat, repudiandae cum temporibus delectus, dolorum praesentium exercitationem eveniet nostrum dolor molestias nulla sapiente magni consequatur.
           </p>
         </div>
-      </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-pink-300">
+        <div className="container mx-auto px-6 py-4 text-center text-gray-800">© 2025 Product Management System. All rights reserved.</div>
+      </footer>
     </div>
   );
 };
